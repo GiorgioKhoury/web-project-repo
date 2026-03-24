@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+    <meta charset="utf-8">
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
+        }
+
+        body{
+            background: #050c1c;
+            padding-top: 70px;
+        }
+
+        .wrapper{
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        nav{
+            margin-top: 5px;
+            border-radius: 25px;
+
+            background: rgba(13, 26, 64, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+
+            border: 1px solid rgba(255, 255, 255, 0.1);
+
+            height: 55px;
+            padding: 5px 20px;
+
+            position: fixed;
+            width: 90%;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        nav p{
+            color: white;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 15px;
+        }
+
+        nav ul a{
+            display: inline-block;
+            text-decoration: none;
+            color: #D3D3D3;
+            transition: all 0.4s ease;
+            margin-right: 60px;
+        }
+
+        nav ul a:hover {
+            color: #3CD7FF;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-shadow: 0 0 10px #3CD7FF;
+            transform: scale(1.1);
+        }
+
+        /* 5.2 Applied rules for the hr element */
+        nav ul li hr {
+            border: 2px solid #3CD7FF;
+            border-radius: 10px;
+            position: absolute;
+            width: 0;
+
+            visibility: hidden;
+            margin-top: 5px;
+            margin-left: -2px;
+        }
+
+        /* 5.2.2 Applied a simple animation for hr when hovering over a */
+        nav ul li a:hover hr {
+            visibility: visible;
+            width: 75px;
+
+            transition: width .3s ease;
+        }
+
+        .contactbtn {
+            border-radius: 25px;
+            background-color: #3CD7FF;
+            width: 130px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            color: #050c1c;
+        }
+
+        .contactbtn:hover {
+            background-color: #2FB8E6;
+            transform: scale(1.1);
+        }
+
+        header div{
+            width: 10%;
+            margin-left: auto;
+            margin-right: auto;
+            color: white;
+            text-align: center;
+            margin-top: 50px;
+            border-radius: 30px;
+            color: #3CD7FF;
+            background: rgba(13, 26, 64, 0.4);
+            font-size: 15px;
+            padding: 5px;
+        }
+
+        header h1{
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+            font-size: 100px;
+            text-align: center;
+        }
+
+        /* 4. Removed the .welcome class rule after the header property since it's not important */
+        header {
+            color: white;
+        }
+
+        /* 4.2
+           The initial rule for the header to have text of color white (according to note 4).
+           But using the 'span' tag around the specific text 'Portfolio', and giving it a custom class 'portfolio'
+           allows setting a styling rule for this specific text.
+           (▼ 👍)
+        */
+        header .portoflio{
+            background: linear-gradient(90deg, #3CD7FF 0%, #7FA8FF 50%,#B38CFF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <div id="hero">
+            <nav>
+                <p>Georgio &amp; Giorgio</p>
+
+                <!-- 1. Used the ul tag for the navigation bar and anchors (commonly used) -->
+                <!-- 5. Added 'hr' elements after every 'a' element (except for the contact button) (and check the hr styles above) -->
+                <ul>
+                    <li><a class="home" href="Home Page.html">Home<hr></a></li>
+                    <li><a href="About Page.html">About Us<hr></a></li>
+                    <li><a href="Schedule Page.html">Schedule<hr></a></li>
+                    <li><a href="Research Page.html">Research<hr></a></li>
+                    <li><a href="Quiz Page.html">Quiz<hr></a></li>
+                    <li><a class="contactbtn" href="Contact Page.html">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <header>
+                <div><p>Hello!</p></div>
+
+                <!--
+                    2. Made 'Welcome to Our Portfolio a single h1 element, and added br (line break) before 'Portfolio'
+                       , and (in css) set the text-align of the element to center.
+                    3. Removed the 'span' tag around 'Welcome to Our' since it's not explicitly necessary.
+                       (Only the span tag around the word 'Portfolio' is important since only this part of the h1 text is set to change)
+                    -->
+                <h1>Welcome to Our
+                    <br>
+                    <span class="portoflio">Portfolio</span>
+                </h1>
+            </header>
+        </div>
+
+        <main></main>
+        <footer></footer>
+
+    </div>
+</body>
+</html>
