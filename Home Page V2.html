@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>home-page</title>
+    <meta charset="utf-8">
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            font-family: Arial;
+        }
+        
+        body{
+            background: #050c1c;
+        }
+
+        nav{
+            border-radius: 25px;
+            height: 55px;
+            width: 90%;
+            margin: auto;
+            margin-top: 10px;
+
+            background-color: rgba(13, 26, 64, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+
+            border: 1px solid rgba(255, 255, 255, 0.1);
+
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        ul{
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+
+            width: 85%;
+            margin: auto;
+
+            height: 100%;
+            padding-left: 200px;
+        }
+
+        nav ul li{
+            position: relative;
+        }
+
+        nav ul li a{
+            text-decoration: none;
+            color: #D3D3D3;
+            transition: all 0.4s ease;
+            margin-right: 60px;
+        }
+
+        nav ul li:hover {
+            color: #3CD7FF;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-shadow: 0 0 20px #3CD7FF;
+            transform: scale(1.1);
+            transition: all 0.5s ease;
+        }
+
+     
+        nav ul li hr {
+            border: 2px solid #3CD7FF;
+            border-radius: 10px;
+
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+
+            width: 0;
+            opacity: 0;
+
+            transition: width 0.3s ease, opacity 0.2s ease;
+        }
+
+        nav ul li a:hover hr {
+            width: 75px;
+            opacity: 1;
+        }
+
+        li .contactbtn{
+            padding-left: 0;
+        }
+
+        .contactbtn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 25px;
+            background-color: #3CD7FF;
+
+            width: 150px;
+            height: 35px;
+
+            color: #050c1c;
+            text-decoration: none;
+
+            margin-right: 0;
+        }
+
+        .contactbtn:hover {
+            background-color: #2FB8E6;
+            transform: scale(1.1);
+        }
+		
+		#hero{
+			background-image:url('herobackground.png');
+			background-repeat: no-repeat;
+			background-size: cover;
+			height: 100vh
+		
+		
+		}
+
+    </style>
+</head>
+
+<body>
+	<div id="hero">
+
+		<nav>
+			<ul>
+				<li><a class="home" href="Home Page.html">Home<hr></a></li>
+				<li><a href="About Page.html">About Us<hr></a></li>
+				<li><a href="Schedule Page.html">Schedule<hr></a></li>
+				<li><a href="Research Page.html">Research<hr></a></li>
+				<li><a href="Quiz Page.html">Quiz<hr></a></li>
+				<li><a class="contactbtn" href="Contact Page.html">Contact Us</a></li>
+			</ul>
+		</nav>
+		<header></header>
+		<main>
+		</main>
+	
+	
+	</div>
+</body>
+</html>
