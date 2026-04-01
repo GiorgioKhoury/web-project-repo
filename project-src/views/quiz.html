@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Layout Practice</title>
+		<link rel="stylesheet" type="text/css" href="../styles/quiz.css">
+	</head>
+	<body>
+		<div id="quiz-wrapper">
+			<div id="form-wrap">
+				<input id="username" type="text" placeholder="Username" required />
+				<button onclick="tostart()">Begin Quiz</button>
+			</div>
+			<div id="bar">
+				<hr id="timer">
+			</div>
+			<div>
+				<p id="question">What is this quiz about?</p>
+			</div>
+			<hr>
+			<div id="answers">
+				<ul id="options-list">
+					<li id="0" class="option">[Option 1]</li>
+					<li id="1" class="option">[Option 2]</li>
+					<li id="2" class="option">[Option 3]</li>
+					<li id="3" class="option">[Option 4]</li>
+				</ul>
+			</div>
+		</div>
+
+		<script src="../controllers/quiz.js">
+		</script>
+	</body>
+</html>
