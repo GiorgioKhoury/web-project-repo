@@ -1,10 +1,55 @@
 // MCQs
 const MCQ1 = [
   {
-    'id': 0,
-    'ques': 'Which tag defines the largest heading?',
-    'opts':  ['<h1>', '<head>', '<heading>', '<h6>'],
-  }
+    id: 0,
+    ques: 'Which tag defines the largest heading?',
+    opts:  ['<h1>', '<head>', '<heading>', '<h6>'],
+  },
+	{
+		id:	1,
+		ques: 'Which element is used to create a hyperlink?',
+		opts:	['<a>', '<link>', '<url>', '<href>'],
+	},
+	{
+		id:	2,
+		ques:	'Which tag creates an unordered list?',
+		opts:	['<ul>', '<ol>', '<li>', '<dl>'],
+	},
+	{
+		id:	3,
+		ques:	'Which HTML5 element contains the main content of the page?',
+		opts:	['<body>', '<main>', '<content>', '<section>'],
+	},
+	{
+		id:	4,
+		ques:	'What type of CSS is stored in a separate .css file?',
+		opts:	['External CSS', 'Internal CSS', 'Embedded CSS', 'Inline CSS'],
+	},
+	{
+		id:	5,
+		ques:	'Which character is used to refer to an element with a specified id?',
+		opts:	['#', '.', '*', '$'],
+	},
+	{
+		id:	6,
+		ques:	'Which is the CSS universal selector (selects all elements)?',
+		opts:	['*', '$', '.', '#'],
+	},
+	{
+		id:	7,
+		ques:	'Which HTML tag represents the table row?',
+		opts:	['<tr>', '<th>', '<row>', '<table-row>'],
+	},
+	{
+		id:	8,
+		ques:	'Which HTML element represents a table header cell?',
+		opts:	['<th>', '<table-head>', '<thead>', '<trh>'],
+	},
+	{
+		id:	9,
+		ques:	'Which CSS property changes the color of text?',
+		opts:	['color', 'text-color', 'font-color', 'text-style']
+	}
 ]
 
 
@@ -32,12 +77,12 @@ function tostart() {
 	if(username.value !== '') {
 		count = 0;
 		userScore = 0;
-		questions = 1;
+		questions = 10;
 
 		user 	= username.value;
-		ques	=	question.innerHTML;
 		mclist = MCQ1;
 
+		shuffleList();
 		unlock();
 		start();
 	} else {
@@ -52,6 +97,8 @@ function start() {
 	let j = 10;
 
 	resetOptions(mclist[count]);
+	count++;
+
 	interval = setInterval(() => {
 		let styleGradient = `linear-gradient(to right, #00BB00 ${i}%, #FFFFFF ${j}%)`;
 
@@ -61,49 +108,69 @@ function start() {
 	}, 50);
 
 	timeOut = setTimeout(() => {
+		clearInterval(interval);
 			
-	Array.from(options.children).forEach(el => {
-		if(parseInt(el.id) === 0)
-			Object.assign(el.style, {
-				backgroundColor: '#00FF00',
-				animation: 'scale-animate .8s ease-in-out, move-to-right .8s .8s ease-in-out'
-			});
-
-		else
-			Object.assign(el.style, {
-				backgroundColor: '#FF0000',
-				animation: 'shake .8s ease-in-out, drop .8s .8s ease-in-out'
-			});
-	});
+		Array.from(options.children).forEach(el => {
+			const { id } = el
 			
-	setTimeout(() => {
-		if (++count < questions) {
-			
+			el.style.pointerEvents = 'none';
+			el.style.cursor = 'default';
+			if(parseInt(id) === 0)
+				Object.assign(el.style, {
+					backgroundColor: '#00FF00',
+					animation: 'scale-animate .8s ease-in-out, move-to-right .8s .8s ease-in-out',
+				});
 
-			start();
-		}
-		else {
-			console.log(`Final Score: ${userScore}/${questions}`);
+			else
+				Object.assign(el.style, {
+					backgroundColor: '#FF0000',
+					animation: 'shake .8s ease-in-out, drop .8s .8s ease-in-out',
+				});
+		});
+				
+		setTimeout(() => {
+			clearTimeout(timeOut);
 
-			lock();
-		}}, 1500);
+			if (count < questions) {
+
+				start();
+			}
+			else {
+				console.log(`Final Score: ${userScore}/${questions}`);
+
+				count = 0;
+				lock();
+			}}, 1500);
 	}, 5000);
-
-	console.log('Timeout and Interval set!!');
 }
 
 // Setting and Resetting the options
 function resetOptions() {
+	console.log(mclist[count].ques);
+
 	let { ques, opts } = mclist[count];
 
 	question.innerHTML = ques;
+	options.replaceChildren();
+	for (let i = 0; i < opts.length; i++) {
+		const li = document.createElement('li');
+		li.id = `${i}`;
+
+		options.appendChild(li);
+	}
+
 	Array.from(options.children).forEach((el, index) => {
+		let temp = index === 0 ? 'correct' : 'incorrect';
+
 		el.textContent = opts[index]
+		el.addEventListener('click', () => selectOption(index, temp));
 
 		Object.assign(el.style, {
 			color: '#000',
 			backgroundColor: '#BBB',
 			animation: '',
+			cursor: 'pointer',
+			pointerEvents: 'auto'
 		});
 	});
 
@@ -112,6 +179,11 @@ function resetOptions() {
 
 // Select Option
 function selectOption(id, option) {
+	Array.from(options.children).forEach((el, index) => {
+		el.style.pointerEvents = 'none';
+		el.style.cursor = 'default';
+	});
+
 	if(option === 'correct') {
 		Array.from(options.children).forEach(el => {
 			if(parseInt(el.id) === id)
@@ -123,8 +195,9 @@ function selectOption(id, option) {
 	
 		userScore++;
 	}
-	else
+	else {
 		Array.from(options.children).forEach(el => {
+
 			if(parseInt(el.id) === 0)
 				Object.assign(el.style, {
 					backgroundColor: '#00FF00',
@@ -137,12 +210,14 @@ function selectOption(id, option) {
 					animation: 'shake .8s ease-in-out, drop .8s .8s ease-in-out'
 				});
 		});
+	}
+
 
 	clearInterval(interval);
 	clearTimeout(timeOut);
 
 	const next = setTimeout(() => {
-		if(++count < questions) {
+		if(count < questions) {
 
 			start();
 		}
@@ -152,9 +227,21 @@ function selectOption(id, option) {
 			timer.style.backgroundImage = 'none';
 			timer.style.backgroundColor = '#0B0';
 
+			count = 0;
 			lock();
 		}
 	}, 1500);
+}
+
+// Shuffles the questions list
+function shuffleList() {
+  for(let i = mclist.length - 1; i > 0; i--) {
+		let j = Math.floor(Math.random() * (i + 1));
+		let temp = mclist[i];
+
+		mclist[i] = mclist[j];
+		mclist[j] = temp;
+	}
 }
 
 // Function to shuffle the options
@@ -170,27 +257,29 @@ function shuffle() {
 // Function to unlock all disabled options
 function unlock() {
 	Array.from(options.children).forEach((el, index) => {
-		let temp = index === 0 ? 'correct' : 'incorrect';
-		el.addEventListener('click', () => selectOption(index, temp));
-
+		
 		Object.assign(el.style, {
 			color: '#000',
 			backgroundColor: '#BBB',
-			animation: '',
-			pointerEvents: '',
 		})
 	});
 }
 
 // Function to disable all options
 function lock() {
+	options.replaceChildren();
+	for(let i = 0; i < 4; i++) {
+		const li = document.createElement('li');
+		
+		options.appendChild(li);
+	}
+
 	Array.from(options.children).forEach((el, index) => {
 		el.textContent = `[Option ${index+1}]`;
 
 		Object.assign(el.style, {
 			color: '#BBB',
 			backgroundColor: '#DDD',
-			pointerEvents:	'none',
 			animation: '',
 		})
 	});
