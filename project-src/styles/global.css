@@ -1,0 +1,131 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: Arial;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body{
+    background-image: radial-gradient(#FFF 30%, #050c1c 70%);
+}
+
+nav{
+    border-radius: 25px;
+    height: 55px;
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
+
+    background-color: rgba(13, 26, 64, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+ul.navbar{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    width: 85%;
+    margin: auto;
+
+    height: 100%;
+    padding-left: 200px;
+}
+
+nav ul li{
+    position: relative;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #D3D3D3;
+    transition: all 0.4s ease;
+    margin-right: 60px;
+}
+
+nav ul li:hover a{
+    color: #0ac5f5;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 0 20px #3CD7FF;
+    transform: scale(1.1);
+    transition: all 0.5s ease;
+}
+nav ul li:hover{
+    transform: scale(1.1);
+    transition: all 0.5s ease;
+}
+
+
+
+nav ul li hr {
+    border: 2px solid #3CD7FF;
+    border-radius: 10px;
+
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+
+    width: 0;
+    opacity: 0;
+
+    transition: width 0.3s ease, opacity 0.2s ease;
+}
+
+nav ul li a:hover hr {
+    width: 75px;
+    opacity: 1;
+}
+
+li .contactbtn{
+    padding-left: 0;
+}
+
+.contactbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 25px;
+    background-color: #3CD7FF;
+
+    width: 150px;
+    height: 35px;
+
+    color: #050c1c;
+    text-decoration: none;
+
+    margin-right: 0;
+}
+
+.contactbtn:hover {
+	color: #050c1c;
+    background-color: #2FB8E6;
+    transform: scale(1.1);
+}
+
+footer {
+	border: 2px solid #050c1c;
+	height: 10vh;
+}
+
+footer p {
+	color: #9FB3C8;
+	width: 30%;
+	font-size: 11px;
+	margin: auto;
+	text-align: center;
+	font-family: Poppins, Arial, sans-serif;
+	line-height: 10vh;
+}
