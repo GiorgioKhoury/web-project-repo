@@ -33,7 +33,7 @@ ul.navbar{
     align-items: center;
     gap: 30px;
 
-    width: 85%;
+    width: 100%;
     margin: auto;
 
     height: 100%;
@@ -118,7 +118,7 @@ footer {
 
 footer p {
 	color: #9FB3C8;
-	width: 30%;
+	width: 100%;
 	font-size: 11px;
 	margin: auto;
 	text-align: center;
