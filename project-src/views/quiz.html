@@ -2,10 +2,22 @@
 
 <html>
 	<head>
-		<title>Layout Practice</title>
+		<title>Quiz</title>
+		<link rel="stylesheet" type="text/css" href="../styles/global.css">
 		<link rel="stylesheet" type="text/css" href="../styles/quiz.css">
 	</head>
-	<body>
+	<body id="body">
+		<nav>
+			<ul class="navbar">
+				<li><a class="home" href="Home Page.html">Home<hr></a></li>
+				<li><a href="About Page.html">About Us<hr></a></li>
+				<li><a href="Schedule Page.html">Schedule<hr></a></li>
+				<li><a href="Research Page.html">Research<hr></a></li>
+				<li><a href="Quiz Page.html">Quiz<hr></a></li>
+				<li><a class="contactbtn" href="Contact Page.html">Contact Us</a></li>
+			</ul>
+		</nav>
+
 		<div id="quiz-wrapper">
 			<div id="form-wrap">
 				<input id="username" type="text" placeholder="Username" required />
@@ -15,7 +27,7 @@
 				<hr id="timer">
 			</div>
 			<div>
-				<p id="question">What is this quiz about?</p>
+				<p id="question">Enter Username and press Begin Quiz to start</p>
 			</div>
 			<hr>
 			<div id="answers">
@@ -26,9 +38,12 @@
 					<li>[Option 4]</li>
 				</ul>
 			</div>
+			<div>
+				<p id="score"> Final Score: <span id="uscore"></span>
+			</div>
 		</div>
 
-		<script src="../controllers/quiz.js">
-		</script>
+		<script src="../controllers/global.js"></script>
+		<script src="../controllers/quiz.js"></script>
 	</body>
 </html>

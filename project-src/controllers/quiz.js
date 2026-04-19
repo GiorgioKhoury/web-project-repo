@@ -59,6 +59,7 @@ const username	= document.getElementById('username');					// Reference to the us
 const question	= document.getElementById('question');					// Reference to the question message
 const timer    	= document.getElementById('timer');							// Reference to bar for animation timer
 const options		= document.getElementById('options-list');			// Reference to the list of options
+const uscore 		= document.getElementById('uscore');						// Reference to print user's final score
 
 // Variables for Timeout and Interval
 let timeOut, interval;
@@ -90,7 +91,7 @@ function tostart() {
 	}
 }
 
-// Start Function
+// Start Quiz Function
 function start() {
 	// Variables used for the loading bar animation
 	let i = 0;
@@ -100,7 +101,7 @@ function start() {
 	count++;
 
 	interval = setInterval(() => {
-		let styleGradient = `linear-gradient(to right, #00BB00 ${i}%, #FFFFFF ${j}%)`;
+		let styleGradient = `linear-gradient(to right, #8500f9 ${i}%, rgba(0, 0, 0, 0) ${j}%)`;
 
 		timer.style.backgroundImage = styleGradient;
 		i++; j++;
@@ -117,7 +118,8 @@ function start() {
 			el.style.cursor = 'default';
 			if(parseInt(id) === 0)
 				Object.assign(el.style, {
-					backgroundColor: '#00FF00',
+					color: '#050c1c',
+					backgroundColor: '#3CD7FF',
 					animation: 'scale-animate .8s ease-in-out, move-to-right .8s .8s ease-in-out',
 				});
 
@@ -136,7 +138,10 @@ function start() {
 				start();
 			}
 			else {
-				console.log(`Final Score: ${userScore}/${questions}`);
+				uscore.textContent = `${userScore}/${count}`;
+
+				timer.style.backgroundImage = 'none';
+				timer.style.backgroundColor = '#8500f9';
 
 				count = 0;
 				lock();
@@ -166,8 +171,8 @@ function resetOptions() {
 		el.addEventListener('click', () => selectOption(index, temp));
 
 		Object.assign(el.style, {
-			color: '#000',
-			backgroundColor: '#BBB',
+			color: '#FFF',
+			backgroundColor: 'none',
 			animation: '',
 			cursor: 'pointer',
 			pointerEvents: 'auto'
@@ -188,7 +193,8 @@ function selectOption(id, option) {
 		Array.from(options.children).forEach(el => {
 			if(parseInt(el.id) === id)
 				Object.assign(el.style, {
-					backgroundColor: '#00FF00',
+					color: "#050c1c", 
+					backgroundColor: '#3CD7FF',
 					animation: 'scale-animate .8s ease-in-out, move-to-right .8s .8s ease-in-out'
 				});
 		});
@@ -200,12 +206,14 @@ function selectOption(id, option) {
 
 			if(parseInt(el.id) === 0)
 				Object.assign(el.style, {
-					backgroundColor: '#00FF00',
+					color: '#050c1c', 
+					backgroundColor: '#3CD7FF',
 					animation: 'scale-animate .8s ease-in-out, move-to-right .8s .8s ease-in-out'
 				});
 
 			if(parseInt(el.id) === id)
 				Object.assign(el.style, {
+					color: '#050c1c',
 					backgroundColor: '#FF0000',
 					animation: 'shake .8s ease-in-out, drop .8s .8s ease-in-out'
 				});
@@ -222,10 +230,10 @@ function selectOption(id, option) {
 			start();
 		}
 		else {
-			console.log(`Final Score: ${userScore}/${count}`);
+			uscore.textContent = `${userScore}/${count}`;
 		
 			timer.style.backgroundImage = 'none';
-			timer.style.backgroundColor = '#0B0';
+			timer.style.backgroundColor = '#8500f9';
 
 			count = 0;
 			lock();
@@ -259,8 +267,8 @@ function unlock() {
 	Array.from(options.children).forEach((el, index) => {
 		
 		Object.assign(el.style, {
-			color: '#000',
-			backgroundColor: '#BBB',
+			color: '#050c1c',
+			backgroundColor: 'none',
 		})
 	});
 }
@@ -278,8 +286,8 @@ function lock() {
 		el.textContent = `[Option ${index+1}]`;
 
 		Object.assign(el.style, {
-			color: '#BBB',
-			backgroundColor: '#DDD',
+			color: '#888',
+			backgroundColor: 'none',
 			animation: '',
 		})
 	});
