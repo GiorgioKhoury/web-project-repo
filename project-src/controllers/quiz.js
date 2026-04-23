@@ -61,6 +61,10 @@ const timer    	= document.getElementById('timer');							// Reference to bar fo
 const options		= document.getElementById('options-list');			// Reference to the list of options
 const uscore 		= document.getElementById('uscore');						// Reference to print user's final score
 
+// Audio effects for quiz
+const correct = new Audio('../assets/mp3/correct.mp3');
+const wrong   = new Audio('../assets/mp3/incorrect.mp3');
+
 // Variables for Timeout and Interval
 let timeOut, interval;
 
@@ -82,6 +86,9 @@ function tostart() {
 
 		user 	= username.value;
 		mclist = MCQ1;
+
+		timer.style.background = 'none';
+		uscore.textContent = '';
 
 		shuffleList();
 		unlock();
@@ -109,6 +116,7 @@ function start() {
 	}, 50);
 
 	timeOut = setTimeout(() => {
+		wrong.play();
 		clearInterval(interval);
 			
 		Array.from(options.children).forEach(el => {
@@ -151,8 +159,6 @@ function start() {
 
 // Setting and Resetting the options
 function resetOptions() {
-	console.log(mclist[count].ques);
-
 	let { ques, opts } = mclist[count];
 
 	question.innerHTML = ques;
@@ -190,6 +196,8 @@ function selectOption(id, option) {
 	});
 
 	if(option === 'correct') {
+		correct.play();
+
 		Array.from(options.children).forEach(el => {
 			if(parseInt(el.id) === id)
 				Object.assign(el.style, {
@@ -202,6 +210,7 @@ function selectOption(id, option) {
 		userScore++;
 	}
 	else {
+		wrong.play();
 		Array.from(options.children).forEach(el => {
 
 			if(parseInt(el.id) === 0)
