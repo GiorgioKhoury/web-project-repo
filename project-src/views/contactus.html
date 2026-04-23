@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Research Page</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../styles/global.css">
+
+    <style>
+        body{
+            background-color: #050c1c;
+            margin: 0;
+            color: white;
+            background-image:none;
+        }
+
+        footer{
+            text-align: center;
+            padding: 25px;
+            background-color: #09142b;
+            margin-top: 40px;
+        }
+
+        #contactus{
+            border-radius: 25px;
+            height: 75vh;
+            background-color: #142038;
+            width: 75%;
+            margin: auto;
+            margin-top: 8%;
+        }
+
+        #flex-container{
+            height: 100%;
+            display: flex;
+            gap: 10px;
+        }
+
+        #text{
+            width: 50%;
+            margin-left: 10px;
+            height: 75%;
+        }
+
+        #form{
+            height: 75%;
+            width: 100%;
+            padding: 20px;
+        }
+
+        #text p{
+            margin-top: 20px;
+            width: 75%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #text h1{
+            width: 75%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 60px;
+        }
+
+        .name-row{
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .name-field{
+            width: 50%;
+        }
+
+        .name-field label{
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .name-field input{
+            width: 100%;
+            height: 40px;
+            background-color: #142038;
+            border: 1px solid black;
+            color: white;
+            padding: 5px;
+        }
+
+        .email-field{
+            margin-bottom: 20px;
+        }
+
+        .email-field label{
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .email-field input{
+            width: 100%;
+            height: 40px;
+            background-color: #142038;
+            border: 1px solid black;
+            color: white;
+            padding: 5px;
+        }
+
+        textarea{
+            width: 99%;
+            height: 150px;
+            resize: none;
+            background-color: #142038;
+            border: 1px solid gray;
+            color: white;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"]{
+            padding: 10px 20px;
+            background-color: #09142b;
+            color: white;
+            border: none;
+            cursor: pointer;
+			border-radius: 25px;
+			transition: all 0.3s ease;
+        }
+		
+		
+		input[type="submit"]:hover{
+			background-color: #050c1c;
+			transform: scale(1.05);
+			transition: all 1s ease;
+		
+		
+		
+		
+		
+		
+		}
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <ul class="navbar">
+        <li><a class="home" href="home-page.html">Home<hr></a></li>
+        <li><a href="About Page.html">About Us<hr></a></li>
+        <li><a href="Schedule Page.html">Schedule<hr></a></li>
+        <li><a href="research.html">Research<hr></a></li>
+        <li><a href="Quiz Page.html">Quiz<hr></a></li>
+        <li><a class="contactbtn" href="Contact Page.html">Contact Us</a></li>
+    </ul>
+</nav>
+
+<main>
+    <div id="contactus">
+        <div id="flex-container">
+
+            <div id="text">
+                <h1>Get in Touch</h1>
+                <p><b>We'd like to hear from you!</b></p>
+                <p>If you have any inquiries or just want to say hi, please use the contact form!</p>
+            </div>
+
+            <div id="form">
+                <form id="contactform">
+
+                    <div class="name-row">
+                        <div class="name-field">
+                            <label for="fname">First Name</label>
+                            <input type="text" id="fname" name="fname" required>
+                        </div>
+
+                        <div class="name-field">
+                            <label for="lname">Last Name</label>
+                            <input type="text" id="lname" name="lname" required>
+                        </div>
+                    </div>
+
+                    <div class="email-field">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <textarea name="message" placeholder="Please enter your message here" required></textarea>
+
+                    <input type="submit" value="Send">
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; GEORGIO &amp; GIORGIO. ALL RIGHTS RESERVED.</p>
+</footer>
+
+<script src="../controllers/global.js"></script>
+
+</body>
+</html>
