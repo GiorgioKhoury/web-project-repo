@@ -11,13 +11,16 @@
             color: white;
         }
 
+        body > div {
+            margin-top: 80px;
+        }
+
         header{
             width: 75%;
             margin: 40px auto;
             border-radius: 20px;
             text-align: center;
 		
-			margin-top: 80px;
 			transform: scale(0.99);
         }
 
@@ -141,8 +144,70 @@
 			margin-right: 20px;
 			float: right;
 		}
-		
-		
+
+        /* The switch - the box around the slider */
+        .switch {
+          position: relative;
+          display: inline-block;
+          width: 60px;
+          height: 34px;
+        }
+
+        /* Hide default HTML checkbox */
+        .switch input {
+          opacity: 0;
+          width: 0;
+          height: 0;
+        }
+
+        /* The slider */
+        .slider {
+            padding: 5px;
+            width: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider span {
+            z-index: 2;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 45%;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+          background-color: #2196F3;
+        }
+
+        input:focus + .slider {
+          box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked + .slider:before {
+          -webkit-transform: translateX(35px);
+          -ms-transform: translateX(35px);
+          transform: translateX(35px);
+        }
     </style>
 </head>
 
@@ -158,10 +223,20 @@
             <li><a class="contactbtn" href="Contact Page.html">Contact Us</a></li>
         </ul>
     </nav>
+
+    <div>
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider" onclick="toggleLanguage()">
+            <span id="english">Eng</span>
+            <span id="arabic">Arab</span>
+          </span>
+        </label>
+    </div>
     <header id="conich">
         <div>
-            <h1>The Internet and the World Wide Web</h1>
-            <p>
+            <h1 class="headers">The Internet and the World Wide Web</h1>
+            <p class="descriptions">
                 Learn what the Internet and the World Wide Web are, how they work, and why they are important in our daily life.
             </p>
     		
