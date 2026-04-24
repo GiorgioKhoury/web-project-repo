@@ -4,211 +4,7 @@
     <title>Research Page</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../styles/global.css">
-
-    <style>
-        body{
-            margin: 0;
-            color: white;
-        }
-
-        body > div {
-            margin-top: 80px;
-        }
-
-        header{
-            width: 75%;
-            margin: 40px auto;
-            border-radius: 20px;
-            text-align: center;
-		
-			transform: scale(0.99);
-        }
-
-        header div {
-            background-color: #0d1b3d;
-            border-radius: 20px;
-            padding: 70px;
-            transform: scale(0.99);
-        }
-
-        header h1{
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-
-        header p{
-            font-size: 20px;
-            color: #dbe4ff;
-            line-height: 1.8;
-        }
-
-        .table{
-            width: 70%;
-            margin: 0 auto 40px auto;
-            background-color: #0d1b3d;
-            padding: 25px 35px;
-            border-radius: 15px;
-        }
-
-        .table h2{
-            margin-bottom: 15px;
-            font-size: 24px;
-        }
-
-        .table ul{
-            padding-left: 20px;
-        }
-
-        .table ul li{
-            margin-bottom: 10px;
-        }
-
-        .table ul li a{
-            color: #c9d8ff;
-            text-decoration: none;
-            font-size: 17px;
-        }
-
-        .table ul li a:hover{
-            color: white;
-        }
-
-        main{
-            width: 70%;
-            margin: auto;
-        }
-
-        section {
-            background-color: white;
-            border-radius: 15px;
-        }
-
-        section div {
-            background-color: #0d1b3d;
-            padding: 35px;
-            border-radius: 15px;
-            margin-bottom: 25px;
-            transform: scale(0.99);
-        }
-
-        section h2{
-            font-size: 28px;
-            margin-bottom: 15px;
-        }
-
-        section p{
-            font-size: 18px;
-            line-height: 1.9;
-            color: #dbe4ff;
-        }
-
-        footer{
-            text-align: center;
-            padding: 25px;
-            background-color: #09142b;
-            margin-top: 40px;
-        }
-		
-		.hero-img{
-			width: 60%;
-			margin-top: 30px;
-			border-radius: 600px;
-			height: 40%;
-			width: 40%;
-			
-		}
-		
-		.section-img1{
-			width: 70%;
-			border-radius: 25px;
-		}
-		
-		.section-img2{
-			width: 40%;
-			border-radius: 25px;
-			float: right;
-			margin-left: 20px;
-			
-		}
-		
-		.section-img3{
-			width: 45%;
-			border-radius: 25px;
-			float: left;
-			margin-right: 20px; 
-		}
-		
-		.section-img4{
-			width: 45%;
-			border-radius: 25px;
-			margin-right: 20px;
-			float: right;
-		}
-
-        /* The switch - the box around the slider */
-        .switch {
-          position: relative;
-          display: inline-block;
-          width: 60px;
-          height: 34px;
-        }
-
-        /* Hide default HTML checkbox */
-        .switch input {
-          opacity: 0;
-          width: 0;
-          height: 0;
-        }
-
-        /* The slider */
-        .slider {
-            padding: 5px;
-            width: 68px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            -webkit-transition: .4s;
-            transition: .4s;
-        }
-
-        .slider span {
-            z-index: 2;
-        }
-
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 26px;
-            width: 45%;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            -webkit-transition: .4s;
-            transition: .4s;
-        }
-
-        input:checked + .slider {
-          background-color: #2196F3;
-        }
-
-        input:focus + .slider {
-          box-shadow: 0 0 1px #2196F3;
-        }
-
-        input:checked + .slider:before {
-          -webkit-transform: translateX(35px);
-          -ms-transform: translateX(35px);
-          transform: translateX(35px);
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="../styles/research.css">
 </head>
 
 <body id="body">
@@ -219,12 +15,12 @@
             <li><a href="About Page.html">About Us<hr></a></li>
             <li><a href="Schedule Page.html">Schedule<hr></a></li>
             <li><a href="research.html">Research<hr></a></li>
-            <li><a href="Quiz Page.html">Quiz<hr></a></li>
-            <li><a class="contactbtn" href="Contact Page.html">Contact Us</a></li>
+            <li><a href="Quiz Page.html" href="quiz.html">Quiz<hr></a></li>
+            <li><a class="contactbtn" href="contactus.html">Contact Us</a></li>
         </ul>
     </nav>
 
-    <div>
+    <div id="slider-div">
         <label class="switch">
           <input type="checkbox">
           <span class="slider" onclick="toggleLanguage()">
@@ -245,17 +41,17 @@
     </header>
 
     <div class="table">
-        <h2>Table of Contents</h2>
+        <h2 id="toch">Table of Contents</h2>
         <ul>
-            <li><a href="#introduction">Introduction</a></li>
-            <li><a href="#internet">What is the Internet</a></li>
-            <li><a href="#web">What is the World Wide Web</a></li>
-            <li><a href="#difference">Difference Between Internet and WWW</a></li>
-            <li><a href="#internetworks">How the Internet Works</a></li>
-            <li><a href="#webworks">How the Web Works</a></li>
-            <li><a href="#uses">Uses of the Internet</a></li>
-            <li><a href="#proscons">Advantages and Disadvantages</a></li>
-            <li><a href="#conclusion">Conclusion</a></li>
+            <li><a href="#introduction" class="contents">Introduction</a></li>
+            <li><a href="#internet" class="contents">What is the Internet</a></li>
+            <li><a href="#web" class="contents">What is the World Wide Web</a></li>
+            <li><a href="#difference" class="contents">Difference Between Internet and WWW</a></li>
+            <li><a href="#internetworks" class="contents">How the Internet Works</a></li>
+            <li><a href="#webworks" class="contents">How the Web Works</a></li>
+            <li><a href="#uses" class="contents">Uses of the Internet</a></li>
+            <li><a href="#proscons" class="contents">Advantages and Disadvantages</a></li>
+            <li><a href="#conclusion" class="contents">Conclusion</a></li>
         </ul>
     </div>
 
@@ -263,8 +59,8 @@
 
         <section id="introduction">
             <div>
-                <h2>Introduction</h2>
-                <p>
+                <h2 class="headers">Introduction</h2>
+                <p class="descriptions">
                     The Internet and the World Wide Web are very important parts of modern life.
                     Today, people use them almost every day in different ways.
                     Students use them to study, search for information, and complete assignments.
@@ -283,11 +79,11 @@
 
         <section id="internet">
             <div>
-                <h2>What is the Internet</h2>
+                <h2 class="headers">What is the Internet?</h2>
                 
     			<img src="../assets/img/network.png" class="section-img1">
     			
-    			<p>
+    			<p class="descriptions">
                     The Internet is a huge global network that connects millions of devices together.
                     These devices can be computers, phones, tablets, servers, and smart machines.
                     The Internet allows them to exchange information in a very short time.
@@ -306,11 +102,11 @@
 
         <section id="web">
             <div>
-                <h2>What is the World Wide Web</h2>
+                <h2 class="headers">What is the World Wide Web?</h2>
                 
     			<img src="../assets/img/web.png" class="section-img2">
     			
-    			<p>
+    			<p class="descriptions">
                     The World Wide Web, also called the Web or WWW, is a collection of websites and web pages.
                     People access these pages through the Internet by using a browser.
                     Common browsers include Chrome, Edge, Firefox, and Safari.
@@ -329,8 +125,8 @@
 
         <section id="difference">
             <div>
-                <h2>Difference Between Internet and WWW</h2>
-                <p>
+                <h2 class="headers">Difference Between the Internet and WWW</h2>
+                <p class="descriptions">
                     The Internet and the World Wide Web are closely connected, but they are not the same thing.
                     The Internet is the global network that connects devices and allows data to travel.
                     The World Wide Web is a service that uses this network to show websites and pages.
@@ -349,11 +145,11 @@
 
         <section id="internetworks">
             <div>
-                <h2>How the Internet Works</h2>
+                <h2 class="headers">How the Internet Works</h2>
                 
     			<img src="../assets/img/packets.png" class="section-img3">
     			
-    			<p>
+    			<p class="descriptions">
                     The Internet works by moving data from one device to another across many networks.
                     When someone sends a message or opens a website, the data is divided into small packets.
                     These packets travel through different paths until they reach the correct destination.
@@ -372,10 +168,10 @@
 
         <section id="webworks">
             <div>
-                <h2>How the Web Works</h2>
+                <h2 class="headers">How the Web Works</h2>
     			
     			<img src="../assets/img/browser-server.png" class="section-img4">
-                <p>
+                <p class="descriptions">
                     The Web works when a person opens a browser and enters a website address.
                     The browser then sends a request to a server where the website is stored.
                     A server is a computer that keeps website files and sends them when needed.
@@ -394,8 +190,8 @@
 
         <section id="uses">
             <div>
-                <h2>Uses of the Internet</h2>
-                <p>
+                <h2 class="headers">Uses of the Internet</h2>
+                <p class="descriptions">
                     The Internet is used in many different areas of daily life.
                     One of its main uses is communication through emails, chats, and video calls.
                     People can talk to family members and friends from different countries in seconds.
@@ -414,8 +210,8 @@
 
         <section id="proscons">
             <div>
-                <h2>Advantages and Disadvantages</h2>
-                <p>
+                <h2 class="headers">Advantages and Disadvantages</h2>
+                <p class="descriptions">
                     The Internet has many advantages that make life easier for people.
                     It gives fast access to information from different parts of the world.
                     It also makes communication easier and quicker than in the past.
@@ -434,8 +230,8 @@
 
         <section id="conclusion">
             <div>
-                <h2>Conclusion</h2>
-                <p>
+                <h2 class="headers">Conclusion</h2>
+                <p class="descriptions">
                     In conclusion, the Internet and the World Wide Web are very important in the modern world.
                     They help people communicate, learn, work, and enjoy entertainment every day.
                     The Internet is the large network that connects devices across the world.
