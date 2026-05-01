@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Research Page</title>
+    <title>Contact Us Page</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../styles/global.css">
 
@@ -22,7 +22,7 @@
 
         #contactus{
             border-radius: 25px;
-            height: 75vh;
+            height: 90vh;
             background-color: #142038;
             width: 75%;
             margin: auto;
@@ -129,13 +129,32 @@
 			background-color: #050c1c;
 			transform: scale(1.05);
 			transition: all 1s ease;
-		
-		
-		
-		
-		
-		
 		}
+
+        iframe {
+            padding: 15px;
+        }
+
+        #contact-list {
+            list-style: none;
+            width: 300px;
+            margin: auto;
+
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        #contact-list li {
+            width: 85%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #contact-list li a {
+            color: #FFF;
+            text-decoration: none;
+        }
     </style>
 </head>
 
@@ -160,6 +179,24 @@
                 <h1>Get in Touch</h1>
                 <p><b>We'd like to hear from you!</b></p>
                 <p>If you have any inquiries or just want to say hi, please use the contact form!</p>
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3308.412265415212!2d35.61608707579146!3d33.98194297318348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151f408e4cf6c665%3A0xb427f123cedc20e6!2sHoly%20Spirit%20University%20of%20Kaslik%20-%20Lebanese%20Maronite%20Order!5e0!3m2!1sen!2slb!4v1777637037344!5m2!1sen!2slb" width="300" height="250" style="border:0;" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                <ul id="contact-list">
+                    <li>
+                        <img src="../assets/img/phone-call.png">
+                        <a href="tel:70812823">70812823</a>
+                    </li>
+                    <li>
+                        <img src="../assets/img/email.png">
+                        <a href="mailto:geongio@gngdesign.com">geongio@gngdesign.com</a>
+                    </li>
+                </ul>
+                <p>
+                    Feel free to submit your feedback or contact us using any of the above options,
+                    and our team will get back to you as soon as possible. <br>
+                    Thank You :)
+                </p>
             </div>
 
             <div id="form">
@@ -185,10 +222,8 @@
                     <textarea name="message" placeholder="Please enter your message here" required></textarea>
 
                     <input type="submit" value="Send">
-
                 </form>
             </div>
-
         </div>
     </div>
 </main>

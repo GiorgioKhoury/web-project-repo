@@ -1,0 +1,93 @@
+main {
+	width: 75%;
+	height: 550px;
+	margin: auto;
+	margin-top: 100px;
+	border-radius: 15px;
+}
+
+#schedules-div {
+	height: 510px;
+	border-radius: 15px;
+	background-color: #142038;
+
+	transform: scale(0.99);
+	padding: 20px;
+	color: #FFF;
+}
+
+#schedules-div h1 {
+	font-size: 38px;
+}
+
+#switcher {
+	display: flex;
+	flex-direction: row;
+
+	width: 100%;
+	overflow-x: hidden;
+}
+
+#switcher #user-1, #switcher #user-2 {
+	min-width: 90%;
+	padding: 15px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+#switcher #user-1 ul, #switcher #user-2 ul {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+
+	list-style-type: square;
+	font-size: 18px;
+}
+
+#switcher #user-1 table th, #switcher #user-1 table td,
+#switcher #user-2 table th, #switcher #user-2 table td {
+	padding: 10px;
+}
+
+#switcher #user-1 table tr:nth-child(odd),
+#switcher #user-2 table tr:nth-child(odd) {
+	background-color: #8500c9;
+}
+
+#switcher #user-1 table tr:first-child th:first-child,
+#switcher #user-2 table tr:first-child th:first-child {
+	border-top-left-radius: 15px;
+}
+
+#switcher #user-1 table tr:first-child th:last-child,
+#switcher #user-2 table tr:first-child th:last-child {
+	border-top-right-radius: 15px;
+}
+
+#switcher #user-1 table tr:last-child td:first-child,
+#switcher #user-2 table tr:last-child td:first-child {
+	border-bottom-left-radius: 15px;
+}
+
+#switcher #user-1 table tr:last-child td:last-child,
+#switcher #user-2 table tr:last-child td:last-child {
+	border-bottom-right-radius: 15px;
+}
+
+input {
+	margin-top: 15px;
+	padding: 15px;
+	font-size: 22px;
+	background-color: #3CD7FF;
+	color: #050c1c;
+	border-radius: 25px;
+	border: none;
+}
+
+input:hover {
+	background-color: #2FB8E6;
+	transform: scale(1.1);
+	transition: .2s ease-in-out;
+}
