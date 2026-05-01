@@ -1,0 +1,124 @@
+        main {
+            padding: 140px 8% 70px;
+        }
+
+        .about-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: nowrap;
+        }
+
+        .profile-card {
+            width: 470px;
+            height: 420px;
+            background: #111c33;
+            border-radius: 28px;
+            padding: 35px;
+            color: white;
+            box-shadow: 0 0 35px rgba(0, 0, 0, 0.35);
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        .profile-card:first-child {
+            transform: translateY(-20px);
+        }
+
+        .profile-card > div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .profile-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 25px;
+            object-fit: cover;
+            background: #0b1224;
+            flex-shrink: 0;
+        }
+
+        .role {
+            color: #52d9ff;
+            font-size: 11px;
+            letter-spacing: 3px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .purple {
+            color: #d46cff;
+        }
+
+        .profile-card h2 {
+            font-size: 32px;
+            margin: 8px 0 10px;
+        }
+
+        .profile-card p {
+            color: #aab3c8;
+            line-height: 1.5;
+            font-size: 14px;
+            max-width: 260px;
+        }
+
+        .info {
+            margin: 10px 0;
+            color: #cbd3e8;
+            font-size: 13px;
+        }
+
+        .info span {
+            color: #52d9ff;
+            margin-right: 8px;
+        }
+
+        .purple-info span {
+            color: #d46cff;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 15px 0;
+        }
+
+        .skills span {
+            border: 1px solid rgba(82, 217, 255, 0.35);
+            color: #52d9ff;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        .purple-skills span {
+            border-color: rgba(212, 108, 255, 0.35);
+            color: #d46cff;
+        }
+
+        .cv-btn {
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+            color: #52d9ff;
+            border: 1px solid rgba(82, 217, 255, 0.5);
+            padding: 10px 22px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 13px;
+            box-shadow: 0 0 12px rgba(82, 217, 255, 0.25);
+            margin-top: 10px;
+        }
+
+        .cv-btn.purple-btn {
+            color: #d46cff;
+            border-color: rgba(212, 108, 255, 0.5);
+            box-shadow: 0 0 12px rgba(212, 108, 255, 0.25);
+        }
