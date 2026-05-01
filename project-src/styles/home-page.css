@@ -137,12 +137,12 @@ li.aboutusbtn a {
 
 #res-wrap > div#three {
 	width: 33%;
-	height: 350px;
+	height: 390px;
 }
 
 #res-wrap > div#four {
 	width: 65%;
-	height: 350px;
+	height: 390px;
 }
 
 img.arrow {
@@ -176,6 +176,10 @@ div .box div {
 	flex-direction: column;
 	gap: 20px;
 	bottom: 0;
+}
+
+div .box div img {
+	border-radius: 15px;
 }
 
 div .box div p {
