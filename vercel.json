@@ -1,5 +1,5 @@
 {
   "routes": [
-    { "src": "/", "dest": "/home-page.html" }
+    { "src": "/", "dest": "project-src/views/home-page.html" }
   ]
 }
